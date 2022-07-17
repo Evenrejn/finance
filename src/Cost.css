@@ -1,5 +1,5 @@
 body {
-    background-color: darkseagreen;
+    background-color: rgb(148, 166, 148);
 }
 
 .wrap {
@@ -87,6 +87,7 @@ body {
     background: whitesmoke;
     margin-right: 15px;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .form-btn-wrap {
