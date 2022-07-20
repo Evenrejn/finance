@@ -1,31 +1,29 @@
 import { Card } from "./Card";
+import { CostFilter }  from "./CostFilter";
+import { CostsDiagram } from "./CostsDiagram";
+import React, { useState } from 'react';
 
-export const Costs = () => {
+export const Costs = ({ costs }) => {
 
-    let costs = [
-        {
-            id: 1,
-            date: "11-06-2022", 
-            description: "Икея фужерчики", 
-            amount: "999.99р",
-        },
-        {
-            id: 2,
-            date: "12-06-2022",
-            description: "Икея постельное белье", 
-            amount: "4999.00р",
-        },
-        {
-            id: 3,
-            date: "30-06-2022", 
-            description: "Вафельки", 
-            amount: "799.99р",
-        },
-    ]
+    const [year, setYear] = useState('2022');
+
+    const getYear = (year) => {
+        setYear(year);
+    }
+
+    const filteredYear = costs.filter(el => el.date == year);
+
+    let costsContent = <p>Нет расходов в {year} году</p>;
+
+    if (filteredYear.length > 0) {
+        costsContent = filteredYear.map((item, i) => <Card key={i} item={item}/>)
+    }
 
     return (
         <div className="costs-wrap">
-            {costs.map((item, i) => <Card key={i} item={item}/>)}
+            <CostFilter setYear={getYear} year={year}/>
+            <CostsDiagram costs={filteredYear}/>
+            {costsContent}
         </div>
     )
 }

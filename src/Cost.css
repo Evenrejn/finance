@@ -50,9 +50,13 @@ body {
     color: darkolivegreen;
 }
 
-.form-wrap {
-    max-width: 825px;
+.form-wrap, .filter-wrap {
+    max-width: 822px;
     margin: 0 auto;
+}
+
+.title {
+    text-align: center;
 }
 
 .input-wrap {
@@ -80,7 +84,7 @@ body {
 .form-btn {
     padding: 5px 8px;
     height: 35px;
-    width: 100px;
+    width: 140px;
     border-radius: 5px;
     outline: none;
     border: 1px solid darkolivegreen;
@@ -93,4 +97,40 @@ body {
 .form-btn-wrap {
     text-align: center;
     margin-top: 15px;
+}
+
+.filter-wrap {
+    background-color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.year-wrap, .year-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.year-title {
+    align-items: baseline;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.month-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.month {
+    width: 10px;
+    height: 50px;
+    border: 1px solid darkolivegreen;
+    border-radius: 10px;
+}
+
+.filter-wrap {
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid darkolivegreen;
+    border-radius: 5px;
 }
